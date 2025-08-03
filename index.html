@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Connect | Hackathon Team Finder</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-code me-2"></i> Vibe Connect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#find-teammates">Find Teammates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Level Up Your Hackathon Team</h1>
+                    <p class="lead mb-5">Power up with teammates who match your coding skills and gaming vibe. Let's build the next epic AI game!</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button class="btn btn-accent btn-lg px-4" data-bs-toggle="modal" data-bs-target="#registerModal">Join Now</button>
+                        <button class="btn btn-outline-light btn-lg px-4" data-bs-toggle="modal" data-bs-target="#demoModal">See Demo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">How It Works</h2>
+                <p class="text-muted">Find your perfect team in just three simple steps</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <h4>1. Create Profile</h4>
+                        <p>Tell us about your skills, experience, and what kind of teammates you're looking for.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>2. Find Matches</h4>
+                        <p>Our algorithm finds developers whose skills and personality vibe with yours.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>3. Connect & Build</h4>
+                        <p>Start collaborating and bring your hackathon project to life together!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Find Teammates Section -->
+    <section id="find-teammates" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Find Your Perfect Teammates</h2>
+                <p class="text-muted">Browse profiles of developers looking for teammates</p>
+            </div>
+            
+            <!-- Filter Section -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Filter Options</h5>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="skills" class="form-label">Skills</label>
+                                <select class="form-select" id="skills">
+                                    <option selected>All Skills</option>
+                                    <option>JavaScript</option>
+                                    <option>Python</option>
+                                    <option>React</option>
+                                    <option>Node.js</option>
+                                    <option>UI/UX</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="experience" class="form-label">Experience Level</label>
+                                <select class="form-select" id="experience">
+                                    <option selected>Any Level</option>
+                                    <option>Beginner</option>
+                                    <option>Intermediate</option>
+                                    <option>Advanced</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="availability" class="form-label">Availability</label>
+                                <select class="form-select" id="availability">
+                                    <option selected>Any Time</option>
+                                    <option>Weekends</option>
+                                    <option>Weekdays</option>
+                                    <option>Full-time</option>
+                                    <option>Part-time</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-primary">Apply Filters</button>
+                            <button type="reset" class="btn btn-outline-secondary ms-2">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Teammates List -->
+            <div class="row g-4" id="teammates-container">
+                <!-- Sample Profile 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="profile-card card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0f5f29d4-116d-45c3-b084-7d0b2acbc0e1.png" alt="Profile of Sarah Johnson, a web developer with dark curly hair and glasses" class="profile-img rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-0">Sarah Johnson</h5>
+                                    <p class="text-muted mb-0">Full Stack Developer</p>
+                                </div>
+                            </div>
+                            <span class="match-percentage">92%</span>
+                        </div>
+                        <p class="mb-3">Looking for 2-3 teammates for a hackathon project. Interested in building a productivity app with AI features.</p>
+                        <div class="mb-3">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-outline-primary btn-sm">View Profile</button>
+                            <button class="btn btn-primary btn-sm">Connect</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sample Profile 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="profile-card card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4ac72b14-0669-4985-8af9-67c4ee8f5cfb.png" alt="Profile of Michael Chen, an AI engineer with short black hair and a friendly smile" class="profile-img rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-0">Michael Chen</h5>
+                                    <p class="text-muted mb-0">AI Engineer</p>
+                                </div>
+                            </div>
+                            <span class="match-percentage">87%</span>
+                        </div>
+                        <p class="mb-3">Seeking a team for a weekend hackathon. Want to work on something related to computer vision or NLP.</p>
+                        <div class="mb-3">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">OpenCV</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-outline-primary btn-sm">View Profile</button>
+                            <button class="btn btn-primary btn-sm">Connect</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sample Profile 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="profile-card card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/46359f7d-8cd9-4ced-a64e-47bb26b8cf0c.png" alt="Profile of Priya Patel, a UX designer with long dark hair and a colorful headscarf" class="profile-img rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-0">Priya Patel</h5>
+                                    <p class="text-muted mb-0">UX/UI Designer</p>
+                                </div>
+                            </div>
+                            <span class="match-percentage">85%</span>
+                        </div>
+                        <p class="mb-3">Looking to join a hackathon team as a designer. Passionate about creating accessible and inclusive designs.</p>
+                        <div class="mb-3">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">User Research</span>
+                            <span class="skill-tag">Accessibility</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-outline-primary btn-sm">View Profile</button>
+                            <button class="btn btn-primary btn-sm">Connect</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sample Profile 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="profile-card card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7202c872-cd12-4898-a4e6-a8ae27b45a45.png" alt="Profile of David Wilson, a mobile developer with blonde hair and a beard" class="profile-img rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-0">David Wilson</h5>
+                                    <p class="text-muted mb-0">Mobile Developer</p>
+                                </div>
+                            </div>
+                            <span class="match-percentage">78%</span>
+                        </div>
+                        <p class="mb-3">Looking for a team to build an innovative mobile app. Have experience with both iOS and Android development.</p>
+                        <div class="mb-3">
+                            <span class="skill-tag">Swift</span>
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">Firebase</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-outline-primary btn-sm">View Profile</button>
+                            <button class="btn btn-primary btn-sm">Connect</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sample Profile 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="profile-card card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/184dd6ef-59da-425a-aa8b-6d4d21fde6d4.png" alt="Profile of Aisha Mohammed, a data scientist with a pink hijab and glasses" class="profile-img rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-0">Aisha Mohammed</h5>
+                                    <p class="text-muted mb-0">Data Scientist</p>
+                                </div>
+                            </div>
+                            <span class="match-percentage">91%</span>
+                        </div>
+                        <p class="mb-3">Looking for teammates for a data visualization hackathon. Interested in projects with social impact.</p>
+                        <div class="mb-3">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">D3.js</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-outline-primary btn-sm">View Profile</button>
+                            <button class="btn btn-primary btn-sm">Connect</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sample Profile 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="profile-card card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4636ae1f-0493-45fa-836f-3b2a7ccb8c59.png" alt="Profile of Carlos Mendez, a blockchain developer with short brown hair and a serious expression" class="profile-img rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-0">Carlos Mendez</h5>
+                                    <p class="text-muted mb-0">Blockchain Developer</p>
+                                </div>
+                            </div>
+                            <span class="match-percentage">82%</span>
+                        </div>
+                        <p class="mb-3">Looking to join or form a team for a Web3 hackathon. Have experience with smart contracts and DeFi.</p>
+                        <div class="mb-3">
+                            <span class="skill-tag">Solidity</span>
+                            <span class="skill-tag">Ethereum</span>
+                            <span class="skill-tag">Web3.js</span>
+                            <span class="skill-tag">Rust</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-outline-primary btn-sm">View Profile</button>
+                            <button class="btn btn-primary btn-sm">Connect</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <button class="btn btn-primary">Load More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game-Inspired Matching Section -->
+    <section class="py-5 bg-light">
+        <div class="container text-center mb-5">
+            <h2 class="fw-bold">Game-Inspired Matching</h2>
+            <p class="text-muted">Our AI analyzes your gaming preferences and coding style</p>
+        </div>
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">AI-Powered Player Matching</h2>
+                    <p>Our neural network analyzes your coding patterns and gaming preferences to find your perfect team squad.</p>
+                    
+                    <h4 class="mt-4">Game-Inspired Matching Factors:</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Technical skills and experience level</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Preferred development methodologies</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Communication style and availability</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Personality traits and values</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Past project experiences and feedback</li>
+                    </ul>
+                    
+                    <button class="btn btn-primary mt-3">Learn More About Our Algorithm</button>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9bf246ed-18a7-4cb7-a5ca-5b741f7b9ea6.png" alt="Visual representation of an algorithm matching people based on skills, colors, and compatibility scores" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Player Testimonials</h2>
+                <p class="text-muted">See how gamers found their perfect coding squad</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/03d0f297-e793-4ffb-b98f-224c44d3bd7f.png" alt="Portrait of Emma, a hackathon winner with red hair and a gold medal around her neck" class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-0">Emma R.</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Thanks to Vibe Connect, I found the perfect team for a sustainability hackathon. We won first place with our zero-waste shopping app!"</p>
+                        <p class="text-muted small mt-auto">Won GreenTech Hackathon 2023</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5688dc55-f5b9-4759-9bc4-7480619aecf1.png" alt="Portrait of Kwame, a developer presenting at a tech conference with a confident smile" class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-0">Kwame T.</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"I was new to hackathons but through Vibe Connect I found experienced teammates who helped me learn and we built something amazing together."</p>
+                        <p class="text-muted small mt-auto">Hackathon Newcomer</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/42212e51-e366-4bc4-bb57-ea0b0315495e.png" alt="Portrait of Sofia, a startup founder with a business card in her hand" class="rounded-circle me-3" width="60">
+                            <div>
+                                <h5 class="mb-0">Sofia L.</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Our match was so good that after the hackathon we decided to turn our project into a startup. Now we're raising our seed round!"</p>
+                        <p class="text-muted small mt-auto">Co-founder at TechStart</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container py-5 text-center">
+            <h2 class="fw-bold mb-4">Ready to Find Your Perfect Team?</h2>
+            <p class="lead mb-5">Join thousands of developers building amazing projects together.</p>
+            <button class="btn btn-accent btn-lg px-5" data-bs-toggle="modal" data-bs-target="#registerModal">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-code me-2"></i> Vibe Connect</h5>
+                    <p>The smartest way to find hackathon teammates who match your skills and working style.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-discord fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Find Teams</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">How It Works</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold">Resources</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h6 class="fw-bold">Subscribe to Our Newsletter</h6>
+                    <p class="small text-white-50">Get the latest hackathon tips and team matching updates.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="small mb-0">© 2023 Vibe Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="loginEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-decoration-none">Forgot password?</a>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <p class="mb-0">Don't have an account? <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Sign up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Create Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-pills mb-4 justify-content-center" id="registerTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="developer-tab" data-bs-toggle="pill" data-bs-target="#developer" type="button" role="tab">Developer</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="designer-tab" data-bs-toggle="pill" data-bs-target="#designer" type="button" role="tab">Designer</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="other-tab" data-bs-toggle="pill" data-bs-target="#other" type="button" role="tab">Other</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="registerTabContent">
+                        <!-- Developer Tab -->
+                        <div class="tab-pane fade show active" id="developer" role="tabpanel" aria-labelledby="developer-tab">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="devFirstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="devFirstName">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="devLastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="devLastName">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="devEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="devEmail">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="devUsername" class="form-label">Username</label>
+                                        <input type="text" class="form-control" id="devUsername">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="devPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="devPassword">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="devConfirmPassword" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control" id="devConfirmPassword">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="devSkills" class="form-label">Primary Skills (Select up to 5)</label>
+                                        <select class="form-select" id="devSkills" multiple>
+                                            <option>JavaScript</option>
+                                            <option>Python</option>
+                                            <option>Java</option>
+                                            <option>C#</option>
+                                            <option>PHP</option>
+                                            <option>Go</option>
+                                            <option>Ruby</option>
+                                            <option>Swift</option>
+                                            <option>Kotlin</option>
+                                            <option>Rust</option>
+                                            <option>C++</option>
+                                            <option>TypeScript</option>
+                                            <option>SQL</option>
+                                            <option>HTML/CSS</option>
+                                            <option>React</option>
+                                            <option>Angular</option>
+                                            <option>Vue.js</option>
+                                            <option>Node.js</option>
+                                            <option>Django</option>
+                                            <option>Flask</option>
+                                            <option>Spring Boot</option>
+                                            <option>.NET</option>
+                                            <option>Laravel</option>
+                                            <option>Express.js</option>
+                                            <option>GraphQL</option>
+                                            <option>REST API</option>
+                                            <option>MongoDB</option>
+                                            <option>PostgreSQL</option>
+                                            <option>MySQL</option>
+                                            <option>Firebase</option>
+                                            <option>AWS</option>
+                                            <option>Docker</option>
+                                            <option>Kubernetes</option>
+                                            <option>Git</option>
+                                            <option>Linux</option>
+                                            <option>Game Development</option>
+                                            <option>Unity</option>
+                                            <option>Unreal Engine</option>
+                                            <option>AI for Games</option>
+                                            <option>Game Design</option>
+                                            <option>Game Development</option>
+                                            <option>Unity</option>
+                                            <option>Unreal Engine</option>
+                                            <option>AI for Games</option>
+                                            <option>Game Design</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="devExperience" class="form-label">Experience Level</label>
+                                        <select class="form-select" id="devExperience">
+                                            <option selected>Select your experience level</option>
+                                            <option>Beginner (0-1 years)</option>
+                                            <option>Intermediate (2-5 years)</option>
+                                            <option>Advanced (5+ years)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="devBio" class="form-label">Short Bio</label>
+                                        <textarea class="form-control" id="devBio" rows="3"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="devGithub" class="form-label">GitHub Profile (optional)</label>
+                                        <input type="url" class="form-control" id="devGithub" placeholder="https://github.com/yourusername">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="devTerms">
+                                            <label class="form-check-label" for="devTerms">
+                                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 mt-3">Create Developer Account</button>
+                            </form>
+                        </div>
+                        
+                        <!-- Designer Tab -->
+                        <div class="tab-pane fade" id="designer" role="tabpanel" aria-labelledby="designer-tab">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="designerFirstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="designerFirstName">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="designerLastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="designerLastName">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="designerEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="designerEmail">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="designerUsername" class="form-label">Username</label>
+                                        <input type="text" class="form-control" id="designerUsername">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="designerPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="designerPassword">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="designerConfirmPassword" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control" id="designerConfirmPassword">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="designerSkills" class="form-label">Design Skills (Select up to 5)</label>
+                                        <select class="form-select" id="designerSkills" multiple>
+                                            <option>UI Design</option>
+                                            <option>UX Design</option>
+                                            <option>User Research</option>
+                                            <option>Wireframing</option>
+                                            <option>Prototyping</option>
+                                            <option>Interaction Design</option>
+                                            <option>Visual Design</option>
+                                            <option>Motion Design</option>
+                                            <option>Illustration</option>
+                                            <option>Typography</option>
+                                            <option>Color Theory</option>
+                                            <option>Information Architecture</option>
+                                            <option>Design Systems</option>
+                                            <option>Accessibility</option>
+                                            <option>Usability Testing</option>
+                                            <option>Figma</option>
+                                            <option>Adobe XD</option>
+                                            <option>Sketch</option>
+                                            <option>InVision</option>
+                                            <option>Adobe Photoshop</option>
+                                            <option>Adobe Illustrator</option>
+                                            <option>Adobe After Effects</option>
+                                            <option>Principle</option>
+                                            <option>Framer</option>
+                                            <option>Webflow</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="designerExperience" class="form-label">Experience Level</label>
+                                        <select class="form-select" id="designerExperience">
+                                            <option selected>Select your experience level</option>
+                                            <option>Beginner (0-1 years)</option>
+                                            <option>Intermediate (2-5 years)</option>
+                                            <option>Advanced (5+ years)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="designerBio" class="form-label">Short Bio</label>
+                                        <textarea class="form-control" id="designerBio" rows="3"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="designerPortfolio" class="form-label">Portfolio Link (optional)</label>
+                                        <input type="url" class="form-control" id="designerPortfolio" placeholder="https://yourportfolio.com">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="designerTerms">
+                                            <label class="form-check-label" for="designerTerms">
+                                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 mt-3">Create Designer Account</button>
+                            </form>
+                        </div>
+                        
+                        <!-- Other Tab -->
+                        <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="otherFirstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="otherFirstName">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="otherLastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="otherLastName">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="otherEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="otherEmail">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="otherUsername" class="form-label">Username</label>
+                                        <input type="text" class="form-control" id="otherUsername">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="otherPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="otherPassword">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="otherConfirmPassword" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control" id="otherConfirmPassword">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="otherRole" class="form-label">Your Role</label>
+                                        <input type="text" class="form-control" id="otherRole" placeholder="Product Manager, Marketer, etc.">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="otherSkills" class="form-label">Your Skills (Comma separated)</label>
+                                        <textarea class="form-control" id="otherSkills" rows="2" placeholder="Project management, marketing, data analysis, etc."></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="otherExperience" class="form-label">Experience Level</label>
+                                        <select class="form-select" id="otherExperience">
+                                            <option selected>Select your experience level</option>
+                                            <option>Beginner (0-1 years)</option>
+                                            <option>Intermediate (2-5 years)</option>
+                                            <option>Advanced (5+ years)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="otherBio" class="form-label">Short Bio</label>
+                                        <textarea class="form-control" id="otherBio" rows="3"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="otherWebsite" class="form-label">Website/Portfolio (optional)</label>
+                                        <input type="url" class="form-control" id="otherWebsite" placeholder="https://yourwebsite.com">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="otherTerms">
+                                            <label class="form-check-label" for="otherTerms">
+                                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 mt-3">Create Account</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <p class="mb-0">Already have an account? <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Modal -->
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="demoModalLabel">Vibe Connect Demo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2840adc4-a2c1-4eea-a671-11ac2537be66.png" alt="Dashboard interface of Vibe Connect showing matching algorithm and team recommendations">
+                    </div>
+                    <div class="mt-3">
+                        <h5>See Vibe Connect in Action</h5>
+                        <p>Our platform makes it easy to find teammates whose skills complement yours and whose working style matches your preferences.</p>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Try It Yourself</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple script to demonstrate functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Example of filtering teammates
+            document.querySelector('#skills').addEventListener('change', function() {
+                const skill = this.value;
+                if (skill !== 'All Skills') {
+                    alert(`Filtering for ${skill} teammates... (This would call an API in production)`);
+                }
+            });
+            
+            // Example match percentage calculation (simplified)
+            function calculateMatchPercentage() {
+                return Math.floor(Math.random() * 30) + 70; // Random between 70-100%
+            }
+            
+            // Update all match percentages on the page
+            document.querySelectorAll('.match-percentage').forEach(el => {
+                el.textContent = calculateMatchPercentage() + '%';
+            });
+            
+            // Login form submission
+            const loginForm = document.querySelector('#loginModal form');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Login would be processed here with backend API');
+                    // In production: send to backend for authentication
+                });
+            }
+            
+            // Register form submission would be similar
+        });
+    </script>
+</body>
+</html>
